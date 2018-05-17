@@ -1,0 +1,91 @@
+﻿@charset "utf-8";
+/*
+作者：WU EVA
+时间:2017/3/29
+版权保留，有疑问请直接私信
+*/
+
+.flow {
+	width: 100%;
+	margin: 30px auto;
+	height: 50px;
+	padding: 20px 0 0 0;
+	position: relative;
+}
+
+.flowList {
+	float: left;
+	height: 2px;
+	border:2px solid #ccc;
+	background: #ccc;
+}
+.flowListBox {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 10px;
+}
+
+.flowListBox .flowList {
+	float: left;
+	text-align: right;
+}
+
+.flowListBox .flowList em {
+	margin-top: -22px;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	background: #ccc;
+	text-align: center; 
+	line-height: 40px;
+	font-style: normal;
+	font-weight: bold;
+	vertical-align: middle;
+	color: #fff;
+	box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.56);
+	cursor:pointer;
+}
+
+.flowListBox .flowList strong {
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	font-weight: 400;
+	cursor:pointer;
+}
+
+.flowListBox .for-cur em
+{
+ 	margin-top: -20px;
+	width: 40px;
+	height: 40px;
+	font-size: 14px;
+	line-height: 40px;
+}
+
+.foot-btn{ width:100%; height:58px; border-top:1px solid #ddd; padding:10px 10px; margin-top:10px;}
+/*.flowListBox .for-cur strong
+{
+	font-weight: 900;
+}*/
+.successs {
+	text-align: center;
+	padding: 20px 0 60px 0;
+}
+
+.successs h3 {
+	padding: 20px;
+	font-size: 25px;
+}
+
+.for-cur:last-child{background-color:#C96; border:2px solid #C96;}
+
+
+.contentList{display:none;}
+.main{
+	margin-top:-20px
+}

@@ -1,0 +1,10 @@
+.lbox{
+	width:400px;
+	height:200px;
+	box-shadow: 0px 0px 100px #0073B7 inset; 
+	border:1px solid white;
+	margin:20px auto;
+}
+.ltitle{
+	float: right;color: white;font-size: 20px;
+}

@@ -1,0 +1,19 @@
+.layui-nav-tree {
+    width: 205px;
+}
+.layui-main {
+	margin: 0px !important;
+	height: 100%;
+}
+.admin-login-box {
+	width: 200px;
+	height: 100%;
+}
+.index-title {
+    font-weight: bold;
+    font-size: 26px;
+    color: #393d49;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: 5px;
+}

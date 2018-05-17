@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+       
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="plugins/dist/css/font-awesome.css" />
+        <link rel="stylesheet" href="css/jquery-accordion-menu.css" />
+     <!--    <link rel="stylesheet" href="css/zzsc-demo.css" /> -->
+       <link rel="stylesheet" href="css/tabb.css" />
+        <!--  <link rel="stylesheet" href="plugins/layui/css/layui.css"> -->
+      <!--   <link rel="stylesheet" href="css/global.css" /> -->
+		<script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+	    <script src="js/echarts.min.js"></script>
+		<style>
+			
+			.spa-ico {
+    background: #2390ef;
+    width: 62px;
+    height: 62px;
+    margin: -16px auto 0;
+   border: 1px solid #1C86EE;
+    border-radius: 8px;
+}
+ 
+.lbox {
+    margin:20px 0px;
+    vertical-align: middle;
+    box-shadow: 0px 0px 10px #F0F0F0;
+    
+    }
+.nei{
+	box-shadow: 0px 0px 48px #1C86EE	 inset;
+	border: 1px solid #1C86EE;
+}
+   .zi{
+
+      line-height: 50px;
+    border-top: 50px solid #1C86EE;
+    border-left:25px solid transparent; 
+    border-right:25px solid transparent;
+    font-family: '微软雅黑';font-size: 24px;
+    text-align: center;color:white;
+    vertical-align:middle;cursor: pointer;letter-spacing: 0;
+text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135
+
+
+   	
+   }
+   	.filterinput{
+		background-color:rgba(249, 244, 244, 0);
+		border-radius:15px;
+		width:90%;
+		height:30px;
+		border:thin solid #FFF;
+		text-indent:0.5em;
+		font-weight:bold;
+		color:#FFF;
+	}
+	#demo-list a{
+		overflow:hidden;
+		text-overflow:ellipsis;
+		-o-text-overflow:ellipsis;
+		white-space:nowrap;
+		width:100%;
+	}
+            .row {
+     margin-right: 0px; 
+     margin-left: 0px; 
+}
+        .tab-pane {
+    border: 1px solid #aaa;
+    width: 100%;
+    padding: 0;
+    margin-top:12px;
+}
+.listgroup{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    cursor:pointer;
+}
+
+
+
+
+	</style>
+
+	</head>
+	<body style="overflow:hidden;background:url(img/e.jpg);background-repeat: repeat;">
+		<div class="row">
+           
+		<div class="col-md-2 ">
+				<div class="lbox nei" >
+					<div class="spa-ico" style="width:160px;height:30px;">
+						<span style="color: white;font-weight: bolder;text-align: center;font-size:16px;line-height:30px;">
+							<i class="fa fa-tasks" aria-hidden="true" style="padding:1px 9px"></i>南宁市在建工地<span>
+						
+					</div>
+                       <div  id="echartsDiv7" style="width:100%;"></div>
+						<!-- <div  id="echartsDiv1" style="width:100%;"></div> -->
+					
+				</div>
+				<div class="lbox nei" >
+					<div class="spa-ico" style="width:160px;height:30px;">
+						<span style="color: white;font-weight: bolder;text-align: center;font-size:16px;line-height:30px;">
+							<i class="fa fa-tasks" aria-hidden="true" style="padding:1px 9px"></i>各地区污染指数<span>
+						
+					</div>
+						<div  id="echartsDiv4" style="width:100%;"></div>
+					
+				</div>
+				
+			</div>
+				<div class="col-sm-5"  style="border-top:6px solid #1C86EE;text-align: center;">
+				<span id="openvideo" class="zi">
+				   南宁市城乡建设委员会BIM技术应用管理平台
+				</span>
+
+				<div id="boss" style="box-shadow:0px 0px 40px #0063DC;position:relative;z-index: 1;">
+					<iframe src="http://npubmap.com:8206/bpmx3/xcl/bufferMap.html" id="boss1" style="width:100%"></iframe>
+				</div>
+
+			</div>
+
+				<div class="col-md-2 ">
+				<div class="lbox nei" >
+					<div class="spa-ico" style="width:280px;height:30px;">
+						<span style="color: white;font-weight: bolder;text-align: center;font-size:16px;line-height:30px;">
+							<i class="fa fa-tasks" aria-hidden="true" style="padding:1px 9px"></i>各城区工程在建造价和在建面积<span>
+						
+					</div>
+						<div  id="echartsDiv5" style="width:100%;"></div>
+					
+				</div>
+			
+			</div>
+             <div class="col-md-3">
+               <div  id="shi" style="margin:20px 0px;vertical-align: middle;">
+					  <ul id="tabs">
+                      <li><a href="javascript:void(0)" onclick="aClick(134)" name="#tab1"  style="font-weight: bold;">视角一</a></li>
+                      <li><a href="javascript:void(0)" onclick="aClick(135)" name="#tab2"  style="font-weight: bold;">视角二</a></li>
+                      <li><a href="javascript:void(0)" onclick="aClick(137)" name="#tab3"  style="font-weight: bold;">视角三</a></li>
+                       <li><a href="javascript:void(0)" onclick="aClick(134)" name="#tab4"  style="font-weight: bold;">视角四</a></li>
+                       <li><a href="javascript:void(0)" onclick="aClick(135)" name="#tab5"  style="font-weight: bold;">视角五</a></li>
+                       <li><a href="javascript:void(0)" onclick="aClick(135)" name="#tab2"  style="font-weight: bold;">视角六</a></li>
+                       <!-- <li><a href="javascript:void(0)" onclick="aClick(137)" name="#tab3"  style="font-weight: bold;">视角七</a></li>
+                       <li><a href="javascript:void(0)" onclick="aClick(134)" name="#tab4"  style="font-weight: bold;">视角八</a></li>
+                      <li><a href="javascript:void(0)" onclick="aClick(135)" name="#tab5"  style="font-weight: bold;">视角九</a></li> -->
+                      
+                  </ul>
+
+              <div id="content1">
+                  <div id="tab1" style="height:100%">
+                          <iframe src="" id="camIframe" style="width:100%;height:100%;"scrolling="no"  frameborder="no"></iframe>
+                  </div>
+                  
+                 
+              </div>
+					
+				</div>
+		</div>
+          
+		</div>
+		<script src="plugins/dist/js/jquery-ui.min.js"></script>
+		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="plugins/bootstrap/js/bootstrap-switch.js"></script>
+     <!--   	<script type="text/javascript" src="plugins/layui/layui.js"></script> -->
+		<!-- <script src="js/sp.js"></script> -->
+		<script src="js/ljq3.js"></script>
+		<script>
+            var worldMapCon = document.getElementById("boss");
+            var worldMapCon1 = document.getElementById("boss1");
+			worldMapCon.style.height = (window.innerHeight-63)+'px';
+            worldMapCon1.style.height = (window.innerHeight-63)+'px';
+            var v=document.getElementById("shi");
+            v.style.height=(window.innerHeight-30)+'px';;
+            var cct=document.getElementById("content1");
+            var cc=v.style.height;
+            var c=cc.split("p")[0];
+           cct.style.height= (c-30)+'px';
+           //tabs宽度
+          
+    window.onload=function(){
+                    var num=134;
+                    var v1=document.getElementById("camIframe");
+                    v1.src="video.html?channel="+num+"";
+    }
+function aClick(ff){
+                var v1=document.getElementById("camIframe");
+                v1.src="video.html?channel="+ff+"";
+
+}
+</script>
+ <script>
+    function resetTabs(){
+        $("#content > div").hide(); 
+        $("#tabs a").attr("id","");     
+    }
+
+    var myUrl = window.location.href;
+    var myUrlTab = myUrl.substring(myUrl.indexOf("#"));    
+    var myUrlTabName = myUrlTab.substring(0,4); 
+ 
+    (function(){
+        $("#content > div").hide(); 
+        $("#tabs li:first a").attr("id","current"); 
+        $("#content > div:first").fadeIn(); 
+        
+        $("#tabs a").on("click",function(e) {
+            e.preventDefault();
+            if ($(this).attr("id") == "current"){ 
+             return       
+            }
+            else{             
+            resetTabs();
+            $(this).attr("id","current"); 
+            $($(this).attr('name')).fadeIn(); 
+            }
+        });
+
+        for (i = 1; i <= $("#tabs li").length; i++) {
+          if (myUrlTab == myUrlTabName + i) {
+              resetTabs();
+              $("a[name='"+myUrlTab+"']").attr("id","current"); 
+              $(myUrlTab).fadeIn();      
+          }
+        }
+    })()
+  </script>
+
+	</body>
+</html>

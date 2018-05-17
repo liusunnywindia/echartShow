@@ -1,0 +1,104 @@
+ *{ margin:0; padding:0;}
+html,body{height:100%; width:100%; margin:0 auto;background: #1C2529;}
+
+        /*滚动条整体*/  
+        ::-webkit-scrollbar{  
+            width:14px; /*滚动条宽度*/  
+        }  
+        /*滚动条按钮*/  
+        ::-webkit-scrollbar-button {  
+  
+        }  
+        ::-webkit-scrollbar-track{  
+            background-color:#F3F3F3;  /*滑道全部*/  
+        }  
+        ::-webkit-scrollbar-track-piece{  
+            background-color:#F3F3F3;  /*滑道*/  
+            -webkit-border-radius:4px; /*滑道圆角宽度*/  
+        }  
+        ::-webkit-scrollbar-thumb{  
+            background-color:#F3F3F3; /*滑动条表面*/  
+            border:solid 1px #C0C0C0; /*滑动条边框*/  
+            border-radius:4px;  /*滑动条圆角宽度*/  
+        }  
+        /*横竖滚动条交角*/  
+        ::-webkit-scrollbar-corner {  
+            background-color: #F3F3F3;  
+        }  
+        /*横竖滚动条交角图案*/  
+        ::-webkit-resizer {  
+            /*background-image: url(/public/img/resizer-inactive.png);*/  
+           background-repeat: no-repeat;  
+           background-position: bottom right;  
+       }  
+       /*鼠标滑过滑动条*/  
+        ::-webkit-scrollbar-thumb:hover{  
+            background-color:#F3F3E0;  
+        }  
+.lbox{
+	
+    margin:14px;
+    vertical-align: middle;
+    box-shadow:0px 0px 10px #F0F0F0
+
+}
+
+.nei{
+	box-shadow: 0px 0px 48px #0063DC inset;
+}
+/*美化滚动条*/
+::-webkit-scrollbar {  
+  width: 14px;  
+  height: 14px;  
+}  
+  
+::-webkit-scrollbar-track,  
+::-webkit-scrollbar-thumb {  
+  border-radius: 999px;  
+  border: 5px solid transparent;  
+}  
+  
+::-webkit-scrollbar-track {  
+  box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;  
+}  
+  
+::-webkit-scrollbar-thumb {  
+  min-height: 20px;  
+  background-clip: content-box;  
+  box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;  
+}  
+  
+::-webkit-scrollbar-corner {  
+  background: transparent;  
+}  
+.video-js{
+	margin-bottom:10px
+}
+/*让高度自适应*/
+/*@media screen  and (max-height:1080px){
+	.b1{
+		min-height: 245px;
+	}
+	.b2{
+		min-height: 250px;
+	}
+	.b3{
+		min-height: 350px;
+	}
+	.b4{
+		min-height: 260px;
+	}
+	.b5{
+		min-height: 275px;
+	}
+	.b6{
+		min-height: 310px;
+	}
+}*/
+/*问题追踪*/
+table{color:#F0F0F0}
+
+.zi{
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
